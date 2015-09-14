@@ -1,5 +1,4 @@
 import { TEST } from '../actions/example'
-import _ from 'lodash'
 
 export function foo(state='bar', action) {
   switch (action.type) {
