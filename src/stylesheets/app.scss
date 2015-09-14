@@ -30,7 +30,7 @@ $gray: #F2F2F2;
 
 .clouds {
   background-repeat: repeat-x;
-  background-size: 100%;
+  background-size: 200%;
   animation: animatedBackground 30s linear infinite;
 }
 
@@ -55,8 +55,8 @@ h3 {
 }
 
 @keyframes animatedBackground {
-  from { background-position: 0 bottom; }
-  to { background-position: -1275px bottom; }
+  from { background-position: 0 top; }
+  to { background-position: -1275px top; }
 }
 
 @keyframes animateClouds {

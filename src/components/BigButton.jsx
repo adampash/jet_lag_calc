@@ -7,10 +7,11 @@ let styles = {
     fontSize: 18,
     padding: '8px 30px',
     background: 'none',
-    border: '3px solid',
+    border: '1px solid',
     display: 'block',
     margin: '0 auto',
     outline: 'none',
+    cursor: 'pointer',
   },
   blue: '#30BBAD'
 }
