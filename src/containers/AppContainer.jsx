@@ -5,13 +5,13 @@ import WelcomeScreen from '../components/WelcomeScreen'
 import GMaps from '../components/GMaps'
 import { test } from '../actions/example'
 import { nextStep } from '../actions/steps'
+import { addOrigin, addDestination } from '../actions/places'
 
 
 let AppContainer = React.createClass({
   render() {
-    const { dispatch, foo, step } = this.props
+    const { dispatch, foo, step, places } = this.props
     let component
-    console.log(step)
     if (step === 0)
       component =
         <WelcomeScreen
@@ -21,12 +21,23 @@ let AppContainer = React.createClass({
       component =
         <GMaps
           type="origin"
-          next={() => dispatch(nextStep())}
+          handleSelect={(place) => {
+            dispatch(addOrigin(place))
+            dispatch(nextStep())
+          }}
         />
     else if (step === 2)
       component =
         <GMaps
           type="destination"
+          handleSelect={(place) => {
+            dispatch(addDestination(place))
+            dispatch(nextStep())
+          }}
+        />
+    else if (step === 3)
+      component =
+        <WelcomeScreen
           next={() => dispatch(nextStep())}
         />
     return(

@@ -5,17 +5,10 @@ export const ADD_DESTINATION = 'ADD_DESTINATION'
 // action creators
 //
 
-export function addOrigin(text) {
-  return { type: ADD_ORIGIN, text }
+export function addOrigin(obj) {
+  return { type: ADD_ORIGIN, origin: obj }
 }
 
-export function addOriginAsync(text) {
-  return dispatch => {
-    // dispatch optimistic update
-    dispatch(test(text))
-    setTimeout(() => {
-      // dispatch final update
-      dispatch(test(`${text} async`))
-    }, 1000)
-  }
+export function addDestination(obj) {
+  return { type: ADD_DESTINATION, origin: obj }
 }

@@ -1,8 +1,7 @@
 @import "font_smoothing";
 @import 'kinja_fonts';
-
-$blue: #30BBAD;
-$gray: #F2F2F2;
+@import 'geosuggest';
+@import 'colors';
 
 .blue {
   background: $blue;
@@ -60,10 +59,16 @@ h3 {
 }
 
 @keyframes animateClouds {
-   from {
-     -webkit-transform: translateX(0);
-   }
-   to {
-     -webkit-transform: translateX(-100%);
-   }
+  from {
+    -webkit-transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
 }

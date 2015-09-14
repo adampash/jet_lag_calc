@@ -1,0 +1,24 @@
+@import 'colors';
+
+.location_form {
+  display: flex;
+  flex-direction: row;
+  height: 47px;
+  button {
+    background: $blue;
+    width: 50px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    // display: flex;
+    // justify-items: center;
+    svg {
+      fill: white;
+      height: 30px;
+      &:hover {
+        fill: black;
+      }
+    }
+  }
+}

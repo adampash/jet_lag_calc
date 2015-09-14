@@ -1,5 +1,7 @@
 import React from 'react'
 import Header from './Header'
+import Geosuggest from 'react-geosuggest'
+import LocationForm from './LocationForm'
 
 let styles = {
   button: {
@@ -29,9 +31,7 @@ export default class GMaps extends React.Component {
       <div className="white">
         <Header />
         <h4 style={styles.label}>{label}</h4>
-        <input type="text" placeholder="Location"
-          style={{...styles.label, ...styles.input}}
-        />
+        <LocationForm handleSelect={this.props.handleSelect} />
       </div>
     )
   }
