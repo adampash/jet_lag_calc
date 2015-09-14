@@ -3,6 +3,7 @@ import { connect, dispatch } from 'react-redux'
 import DumbComponent from '../components/DumbComponent.jsx'
 import WelcomeScreen from '../components/WelcomeScreen'
 import GMaps from '../components/GMaps'
+import FinalStep from '../components/FinalStep'
 import { test } from '../actions/example'
 import { nextStep } from '../actions/steps'
 import { addOrigin, addDestination } from '../actions/places'
@@ -10,7 +11,12 @@ import { addOrigin, addDestination } from '../actions/places'
 
 let AppContainer = React.createClass({
   render() {
-    const { dispatch, foo, step, places } = this.props
+    const {
+      dispatch,
+      foo,
+      step,
+      places
+    } = this.props
     let component
     if (step === 0)
       component =
@@ -37,8 +43,9 @@ let AppContainer = React.createClass({
         />
     else if (step === 3)
       component =
-        <WelcomeScreen
-          next={() => dispatch(nextStep())}
+        <FinalStep
+          startOver={() => dispatch(nextStep(0))}
+          places={places}
         />
     return(
       <div className="app">
