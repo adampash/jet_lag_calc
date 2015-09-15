@@ -34,38 +34,48 @@ let styles = {
 }
 
 export default class FinalStep extends React.Component {
-
-  render() {
+  renderContent() {
     let { places } = this.props
     let { origin, destination } = places
+    let {
+      startEating,
+      stopEating
+    } = Timezone.getTimes(origin, destination)
 
-    if (!destination.tz)
-      return(
-        <div className="loading">Loading</div>
-      )
+    return(
+      <div>
+        To avoid jet lag,<br />
+        you should stop eating at
+        <div className="time" style={styles.time}>
+          {`${stopEating}`}
+        </div>
+        before your flight. <br />
+        <br />
+        You should eat your next meal at
+        <div className="time" style={styles.time}>
+          {`${startEating}`},
+        </div>
+        which is 8:30am (breakfast)<br />
+        at your destination.<br />
+        Bon voyage!
+      </div>
+    )
+  }
+  render() {
+    let { origin, destination } = this.props.places
 
-      let {
-        startEating,
-        stopEating
-      } = Timezone.getTimes(origin, destination)
+    let content
+    if (destination.tz) {
+      content = this.renderContent()
+    } else {
+      content = <div className="loading">Loading</div>
+    }
+
     return(
       <div className="blue" style={styles.container}>
         <Header />
         <div className="results" style={styles.results}>
-          To avoid jet lag,<br />
-          you should stop eating at
-          <div className="time" style={styles.time}>
-            {`${stopEating}`}
-          </div>
-          before your flight. <br />
-          <br />
-          You should eat your next meal at
-          <div className="time" style={styles.time}>
-            {`${startEating}`},
-          </div>
-          which is 8:30am (breakfast)<br />
-          at your destination.<br />
-          Bon voyage!
+          {content}
         </div>
         <div className="clouds" style={styles.clouds}>
         </div>
