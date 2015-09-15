@@ -42,8 +42,8 @@
   overflow-y: auto;
   list-style: none;
   z-index: 5;
-  // -webkit-transition: max-height 0.2s, border 0.2s;
-  //         transition: max-height 0.2s, border 0.2s;
+  -webkit-transition: max-height 0.2s, border 0.2s;
+          transition: max-height 0.2s, border 0.2s;
 }
 .geosuggest__suggests--hidden {
   max-height: 0;
@@ -61,7 +61,7 @@
 }
 .geosuggest-item:hover,
 .geosuggest-item:focus {
-  // background: #ddd;
+  background: #eee;
 }
 .geosuggest-item--active {
   color: black;
@@ -70,5 +70,5 @@
 }
 .geosuggest-item--active:hover,
 .geosuggest-item--active:focus {
-  // background: #ccc;
+  background: #eee;
 }

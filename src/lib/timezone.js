@@ -47,7 +47,6 @@ export let Timezone = {
 
   stopEating(date, zoneName) {
     date = date.setHours(date.getHours()-14)
-    console.log(moment(date))
     return moment(date)
       .tz(zoneName)
       .format('h:mm a z')

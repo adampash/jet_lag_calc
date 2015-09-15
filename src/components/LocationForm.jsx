@@ -40,6 +40,7 @@ export default class LocationForm extends React.Component {
         <Geosuggest placeholder="Location" ref="suggest"
           style={{...styles.label, ...styles.input}}
           onSuggestSelect={this.handleSelect.bind(this)}
+          places={["locality"]}
         />
         <button><Isvg src={arrow} /></button>
       </div>

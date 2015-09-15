@@ -46,7 +46,7 @@ export default class FinalStep extends React.Component {
     return(
       <div>
         To avoid jet lag,<br />
-        you should stop eating at
+        you should stop eating by
         <div className="time" style={styles.time}>
           {`${stopEating}`}
         </div>
