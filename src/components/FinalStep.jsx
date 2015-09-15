@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import BigButton from './BigButton'
 // import moment from 'moment'
-// import moment from 'moment-timezone'
+import moment from 'moment-timezone'
 
 const clouds = require('../assets/clouds.svg')
 const plane = require('../assets/airplane.svg')
@@ -14,7 +14,7 @@ let styles = {
   container: {
   },
   results: {
-    fontSize: 36,
+    fontSize: 34,
     fontFamily: 'ElizabethSerif',
     padding: '10px 30px'
   },
@@ -42,8 +42,8 @@ export default class FinalStep extends React.Component {
     let dateString = `${d.getMonth()}/${d.getDate()}/${d.getFullYear()} 08:30 GMT+${destination.tz.gmtOffset/60/60*100}`
     let date = Date.parse(dateString)
     let thisDate = new Date(date)
-    let startEating = moment(thisDate).format('h:mm a')
-    let stopEating = moment(thisDate.setHours(thisDate.getHours()-14)).format('h:mm a')
+    let startEating = moment(thisDate).tz(origin.tz.zoneName).format('h:mm a z')
+    let stopEating = moment(thisDate.setHours(thisDate.getHours()-14)).tz(origin.tz.zoneName).format('h:mm a z')
     return { startEating, stopEating }
   }
 
@@ -64,15 +64,15 @@ export default class FinalStep extends React.Component {
           To avoid jet lag,<br />
           you should stop eating at
           <div className="time" style={styles.time}>
-            {`${stopEating} ${origin.tz.abbreviation}`}
+            {`${stopEating}`}
           </div>
           before your flight. <br />
           <br />
-          You should start eating at
+          You should eat your next meal at
           <div className="time" style={styles.time}>
-            {`${startEating} ${origin.tz.abbreviation}`},
+            {`${startEating}`},
           </div>
-          or 8:30am (breakfast time)<br />
+          which is 8:30am (breakfast)<br />
           at your destination.<br />
           Bon voyage!
         </div>
