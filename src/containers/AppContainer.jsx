@@ -44,7 +44,7 @@ let AppContainer = React.createClass({
     else if (step === 3)
       component =
         <FinalStep
-          startOver={() => dispatch(nextStep(0))}
+          startOver={() => dispatch(nextStep(1))}
           places={places}
         />
     return(
