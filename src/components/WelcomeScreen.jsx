@@ -13,9 +13,9 @@ let styles = {
   },
   clouds: {
     backgroundImage: `url(${clouds})`,
-    height: 140,
+    height: 130,
     display: 'block',
-    marginTop: -130,
+    marginTop: -110,
   },
   plane: {
     width: '70%',

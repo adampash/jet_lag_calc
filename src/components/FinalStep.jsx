@@ -1,8 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import BigButton from './BigButton'
-// import moment from 'moment'
-import moment from 'moment-timezone'
+import { Timezone } from '../lib/timezone'
 
 const clouds = require('../assets/clouds.svg')
 const plane = require('../assets/airplane.svg')
@@ -35,17 +34,6 @@ let styles = {
 }
 
 export default class FinalStep extends React.Component {
-  getBreakfast() {
-    let { places } = this.props
-    let { origin, destination } = places
-    let d = new Date()
-    let dateString = `${d.getMonth()}/${d.getDate()}/${d.getFullYear()} 08:30 GMT+${destination.tz.gmtOffset/60/60*100}`
-    let date = Date.parse(dateString)
-    let thisDate = new Date(date)
-    let startEating = moment(thisDate).tz(origin.tz.zoneName).format('h:mm a z')
-    let stopEating = moment(thisDate.setHours(thisDate.getHours()-14)).tz(origin.tz.zoneName).format('h:mm a z')
-    return { startEating, stopEating }
-  }
 
   render() {
     let { places } = this.props
@@ -56,7 +44,10 @@ export default class FinalStep extends React.Component {
         <div className="loading">Loading</div>
       )
 
-    let { startEating, stopEating } = this.getBreakfast()
+      let {
+        startEating,
+        stopEating
+      } = Timezone.getTimes(origin, destination)
     return(
       <div className="blue" style={styles.container}>
         <Header />
