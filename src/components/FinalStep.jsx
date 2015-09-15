@@ -39,7 +39,8 @@ export default class FinalStep extends React.Component {
     let { origin, destination } = places
     let {
       startEating,
-      stopEating
+      stopEating,
+      breakfastTz
     } = Timezone.getTimes(origin, destination)
 
     return(
@@ -55,8 +56,8 @@ export default class FinalStep extends React.Component {
         <div className="time" style={styles.time}>
           {`${startEating}`},
         </div>
-        which is 8:30am (breakfast)<br />
-        at your destination.<br />
+        which is 8:30 am {breakfastTz},<br />
+        breakfast at your destination.<br />
         Bon voyage!
       </div>
     )
@@ -68,7 +69,7 @@ export default class FinalStep extends React.Component {
     if (destination.tz) {
       content = this.renderContent()
     } else {
-      content = <div className="loading">Loading</div>
+      content = <div className="loading">Loading...</div>
     }
 
     return(

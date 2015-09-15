@@ -24,8 +24,9 @@ let styles = {
 
 export default class LocationForm extends React.Component {
   handleSelect(e) {
+    if (this.props.type === 'origin')
+      this.refs.suggest.update('')
     this.props.handleSelect(e)
-    this.refs.suggest.update('')
   }
 
   componentDidMount() {
@@ -34,11 +35,6 @@ export default class LocationForm extends React.Component {
 
   render() {
     let { type } = this.props
-    let label
-    if (type == 'origin')
-      label = "Where are you flying out of?"
-    else
-      label = "Where are you flying to?"
     return(
       <div className="location_form">
         <Geosuggest placeholder="Location" ref="suggest"
