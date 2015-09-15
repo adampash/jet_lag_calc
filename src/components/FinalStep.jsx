@@ -50,7 +50,7 @@ export default class FinalStep extends React.Component {
         <div className="time" style={styles.time}>
           {`${stopEating}`}
         </div>
-        before your flight. <br />
+        the day before your arrival. <br />
         <br />
         You should eat your next meal at
         <div className="time" style={styles.time}>
