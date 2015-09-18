@@ -11,11 +11,16 @@ let styles = {
   },
   container: {
   },
+  cloud_container: {
+    overflowX: 'hidden',
+    width: '100%',
+    marginTop: -110
+  },
   clouds: {
     backgroundImage: `url(${clouds})`,
     height: 149,
     display: 'block',
-    marginTop: -110,
+    // marginTop: -110,
   },
   plane: {
     width: '70%',
@@ -30,7 +35,8 @@ export default class WelcomeScreen extends React.Component {
       <div className="blue" style={styles.container}>
         <Header />
         <img src={plane} className="plane" style={styles.plane} />
-        <div className="clouds" style={styles.clouds}>
+        <div style={styles.cloud_container}>
+          <div className="clouds" style={styles.clouds} />
         </div>
         <div className="button_container">
           <BigButton handleClick={this.props.next} text="Get started"

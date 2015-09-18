@@ -80,7 +80,8 @@ export default class FinalStep extends React.Component {
         <div className="results" style={styles.results}>
           {content}
         </div>
-        <div className="clouds final" style={styles.clouds}>
+        <div style={{overflowX: 'hidden', width: '100%'}}>
+          <div className="clouds final" style={styles.clouds} />
         </div>
         <div className="button_container" style={styles.button_container}>
           <BigButton handleClick={this.props.startOver} text="Start over"

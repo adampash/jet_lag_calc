@@ -6,10 +6,10 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 300px;
+  // min-height: 300px;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
 }
 
 .blue {
@@ -25,10 +25,12 @@ body {
 }
 
 .app {
-  overflow: hidden;
   max-width: 636px;
   @include font-smoothing;
   // max-width: 800px;
+  // div {
+  //   overflow-x: hidden;
+  // }
 }
 
 .animated {
