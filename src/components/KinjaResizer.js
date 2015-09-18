@@ -24,10 +24,11 @@ let KinjaResizer = {
   },
 
   getHeight() {
+    let minHeight = 400
     let body = document.body
     let html = document.documentElement
 
-    return Math.max(html.scrollHeight, html.offsetHeight)
+    return Math.max(html.scrollHeight, html.offsetHeight, minHeight)
   }
 
 }
