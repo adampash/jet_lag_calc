@@ -43,6 +43,10 @@ export default class FinalStep extends React.Component {
     this.props.resize()
   }
 
+  componentDidUpdate() {
+    this.props.resize()
+  }
+
   renderContent() {
     let { places } = this.props
     let { origin, destination } = places

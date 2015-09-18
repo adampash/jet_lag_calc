@@ -31,6 +31,7 @@ let styles = {
 
 export default class WelcomeScreen extends React.Component {
   resize() {
+    console.log('loaded')
     this.props.resize()
   }
 
