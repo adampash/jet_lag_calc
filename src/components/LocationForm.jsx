@@ -8,7 +8,7 @@ const arrow = require('../assets/arrow.svg')
 
 let styles = {
   button: {
-    marginTop: 200
+    marginTop: 200,
   },
   label: {
     fontFamily: 'ElizabethSerif',
@@ -29,7 +29,14 @@ export default class LocationForm extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.suggest.getDOMNode().children[0].focus()
+    this.focus()
+  }
+
+  focus() {
+    setTimeout(() => {
+      if (this.refs.suggest)
+        this.refs.suggest.getDOMNode().children[0].focus()
+    }, 100)
   }
 
   handleSelect(e) {
@@ -39,9 +46,11 @@ export default class LocationForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     if (!this.state.place) return
+    this.props.handleSelect(this.state.place)
     if (this.props.type === 'origin')
       this.refs.suggest.update('')
-    this.props.handleSelect(this.state.place)
+      this.focus()
+      this.setState({place: null})
   }
 
   render() {

@@ -34,8 +34,12 @@ body {
 
 .clouds {
   background-repeat: repeat-x;
+  margin: 0;
+  padding: 0;
+  // background-repeat: round no-repeat;
   background-size: 200%;
   animation: animatedBackground 30s linear infinite;
+  // animation: animatedBackground 10s linear infinite;
 }
 
 .button_container {
@@ -62,7 +66,7 @@ h3 {
 
 @keyframes animatedBackground {
   from { background-position: 0 top; }
-  to { background-position: -1275px top; }
+  to { background-position: -1270px top; }
 }
 
 @keyframes animateClouds {
@@ -78,4 +82,39 @@ h3 {
   box-sizing: border-box;
   -webkit-box-sizing:border-box;
   -moz-box-sizing: border-box;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+// 1284 239.2
+@media (max-width: 480px) {
+  @keyframes animatedBackground {
+    from { background-position: 0 top; }
+    to { background-position: -750px top; }
+  }
+  .clouds {
+    animation: animatedBackground 30s linear infinite;
+    height: 149px !important;
+    // height: 200px !important;
+    width: 100%;
+    margin-top: -40px !important;
+  }
+  .plane {
+    margin-top: 20px !important;
+  }
+  .button_container {
+    margin-top: -50px;
+  }
+  form {
+    button {
+      margin-top: 2px
+    }
+  }
+  .results {
+    font-size: 20px !important;
+    line-height: 32px !important;
+  }
 }

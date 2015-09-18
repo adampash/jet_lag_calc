@@ -17,7 +17,7 @@ React.render(
     <Provider store={store}>
       {() => <AppContainer />}
     </Provider>
-    {__DEVTOOLS__ &&
+    {__DEVTOOLS__ && false &&
       <DebugPanel top right bottom>
         <DevTools store={store} monitor={LogMonitor} />
       </DebugPanel>

@@ -29,7 +29,7 @@ export default class WelcomeScreen extends React.Component {
     return(
       <div className="blue" style={styles.container}>
         <Header />
-        <img src={plane} style={styles.plane} />
+        <img src={plane} className="plane" style={styles.plane} />
         <div className="clouds" style={styles.clouds}>
         </div>
         <div className="button_container">

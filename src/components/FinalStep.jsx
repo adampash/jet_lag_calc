@@ -12,19 +12,24 @@ let styles = {
   },
   container: {
   },
+  button_container: {
+    marginTop: -30
+  },
   results: {
-    fontSize: 34,
+    fontSize: 30,
+    lineHeight: '42px',
     fontFamily: 'ElizabethSerif',
-    padding: '10px 30px'
+    padding: '10px 30px',
+    color: 'black'
   },
   time: {
-    color: 'black',
+    color: 'white',
   },
   clouds: {
     backgroundImage: `url(${clouds})`,
-    height: 100,
+    height: 149,
     display: 'block',
-    marginTop: -15,
+    marginTop: 12,
   },
   plane: {
     width: '70%',
@@ -45,20 +50,17 @@ export default class FinalStep extends React.Component {
 
     return(
       <div>
-        To avoid jet lag,<br />
-        you should stop eating by
-        <div className="time" style={styles.time}>
-          {`${stopEating}`}
-        </div>
-        the day before your arrival. <br />
+        The day before your arrival,<br />
+        stop eating by&nbsp;
+        <span className="time" style={styles.time}>
+          {`${stopEating}`}.
+        </span><br />
         <br />
-        You should eat your next meal at
-        <div className="time" style={styles.time}>
-          {`${startEating}`},
-        </div>
-        which is 8:30 am {breakfastTz},<br />
+        Eat your next meal at<br />
+        <span className="time" style={styles.time}>
+          {`${startEating}`} (8:30 a.m. {breakfastTz}),
+        </span><br />
         breakfast at your destination.<br />
-        Bon voyage!
       </div>
     )
   }
@@ -80,7 +82,7 @@ export default class FinalStep extends React.Component {
         </div>
         <div className="clouds" style={styles.clouds}>
         </div>
-        <div className="button_container">
+        <div className="button_container" style={styles.button_container}>
           <BigButton handleClick={this.props.startOver} text="Start over"
             color="blue"
           />
