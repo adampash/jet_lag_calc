@@ -10,7 +10,7 @@ let styles = {
   label: {
     fontFamily: 'ElizabethSerif',
     fontWeight: 'normal',
-    fontSize: 20
+    fontSize: 26
   },
   input: {
     padding: 10,

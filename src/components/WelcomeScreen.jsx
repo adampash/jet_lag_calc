@@ -13,7 +13,7 @@ let styles = {
   },
   clouds: {
     backgroundImage: `url(${clouds})`,
-    height: 130,
+    height: 149,
     display: 'block',
     marginTop: -110,
   },

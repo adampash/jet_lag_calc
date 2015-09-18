@@ -11,14 +11,13 @@
     border: none;
     outline: none;
     cursor: pointer;
-    // display: flex;
-    // justify-items: center;
+    &:hover svg {
+      fill: black;
+    }
     svg {
       fill: white;
       height: 30px;
-      &:hover {
-        fill: black;
-      }
+      margin-top: -1px;
     }
   }
 }

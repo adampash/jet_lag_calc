@@ -5,9 +5,7 @@ const path = require('path')
 const config = require('./webpack.common.config')
 const webpack = require('webpack')
 
-if (config.home) {
-  url = "http://0.0.0.0"
-}
+url = "http://0.0.0.0"
 
 config.entry.push('webpack-hot-middleware/client')
 config.output = {
