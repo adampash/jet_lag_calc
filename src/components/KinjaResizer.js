@@ -24,7 +24,7 @@ let KinjaResizer = {
   },
 
   getHeight() {
-    let minHeight = 400
+    let minHeight = 450
     let body = document.body
     let html = document.documentElement
 
