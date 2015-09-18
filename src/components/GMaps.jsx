@@ -30,7 +30,7 @@ export default class GMaps extends React.Component {
     return(
       <div className="white">
         <Header />
-        <h4 style={styles.label}>{label}</h4>
+        <h4 className="label" style={styles.label}>{label}</h4>
         <LocationForm handleSelect={this.props.handleSelect} type={type} />
       </div>
     )

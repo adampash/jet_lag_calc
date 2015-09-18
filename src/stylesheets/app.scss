@@ -6,6 +6,10 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .blue {
@@ -21,6 +25,7 @@ body {
 }
 
 .app {
+  overflow: hidden;
   max-width: 636px;
   @include font-smoothing;
   // max-width: 800px;
@@ -34,12 +39,13 @@ body {
 
 .clouds {
   background-repeat: repeat-x;
+  width: 100%;
+  width: 799px;
   margin: 0;
   padding: 0;
   // background-repeat: round no-repeat;
   background-size: 200%;
   animation: animatedBackground 30s linear infinite;
-  // animation: animatedBackground 10s linear infinite;
 }
 
 .button_container {
@@ -66,7 +72,7 @@ h3 {
 
 @keyframes animatedBackground {
   from { background-position: 0 top; }
-  to { background-position: -1270px top; }
+  to { background-position: -1600px top; }
 }
 
 @keyframes animateClouds {
@@ -91,22 +97,22 @@ input {
 
 // 1284 239.2
 @media (max-width: 480px) {
-  @keyframes animatedBackground {
-    from { background-position: 0 top; }
-    to { background-position: -750px top; }
-  }
   .clouds {
     animation: animatedBackground 30s linear infinite;
     height: 149px !important;
     // height: 200px !important;
     width: 100%;
-    margin-top: -40px !important;
+    width: 799px;
+    margin-top: -95px !important;
+    // background-size: 400%;
   }
   .plane {
-    margin-top: 20px !important;
+    margin-top: 30px !important;
+    width: 92% !important;
   }
   .button_container {
-    margin-top: -50px;
+    margin-top: -10px;
+    padding-bottom: 30px;
   }
   form {
     button {
@@ -114,7 +120,18 @@ input {
     }
   }
   .results {
-    font-size: 20px !important;
-    line-height: 32px !important;
+    font-size: 22px !important;
+    line-height: 34px !important;
+    // padding-top: 0 !important;
+    padding: 0 0 10px 18px !important;
+    br + br {
+      display: none;
+    }
+  }
+  .final.clouds {
+    margin-top: -50px !important;
+  }
+  .label {
+    font-size: 22px !important;
   }
 }

@@ -21,7 +21,6 @@ export let Timezone = {
     let date = new Date(
       Date.parse(this.dateString(destination))
     )
-    debugger
     return {
       startEating: this.startEating(date, origin.tz.zoneName),
       stopEating: this.stopEating(date, origin.tz.zoneName),
