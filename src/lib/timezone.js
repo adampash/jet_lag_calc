@@ -21,6 +21,7 @@ export let Timezone = {
     let date = new Date(
       Date.parse(this.dateString(destination))
     )
+    debugger
     return {
       startEating: this.startEating(date, origin.tz.zoneName),
       stopEating: this.stopEating(date, origin.tz.zoneName),
@@ -33,7 +34,7 @@ export let Timezone = {
     let { gmtOffset } = destination.tz
     let plus_or_min
     if (parseInt(gmtOffset) < 0)
-      plus_or_min = '-'
+      plus_or_min = ''
     else
       plus_or_min = '+'
 
