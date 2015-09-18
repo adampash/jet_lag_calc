@@ -20,6 +20,10 @@ let styles = {
 }
 
 export default class GMaps extends React.Component {
+  componentDidMount() {
+    this.props.resize()
+  }
+
   render() {
     let { type } = this.props
     let label

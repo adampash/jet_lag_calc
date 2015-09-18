@@ -39,6 +39,10 @@ let styles = {
 }
 
 export default class FinalStep extends React.Component {
+  componentDidMount() {
+    this.props.resize()
+  }
+
   renderContent() {
     let { places } = this.props
     let { origin, destination } = places

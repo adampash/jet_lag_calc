@@ -7,9 +7,13 @@ import FinalStep from '../components/FinalStep'
 import { test } from '../actions/example'
 import { nextStep } from '../actions/steps'
 import { addOrigin, addDestination } from '../actions/places'
+import KinjaResizer from '../components/KinjaResizer'
+
 
 
 let AppContainer = React.createClass({
+  mixins: [KinjaResizer],
+
   render() {
     const {
       dispatch,
@@ -22,10 +26,12 @@ let AppContainer = React.createClass({
       component =
         <WelcomeScreen
           next={() => dispatch(nextStep())}
+          resize={this.resize}
         />
     else if (step === 1)
       component =
         <GMaps
+          resize={this.resize}
           type="origin"
           handleSelect={(place) => {
             dispatch(addOrigin(place))
@@ -35,6 +41,7 @@ let AppContainer = React.createClass({
     else if (step === 2)
       component =
         <GMaps
+          resize={this.resize}
           type="destination"
           handleSelect={(place) => {
             dispatch(addDestination(place))
@@ -44,6 +51,7 @@ let AppContainer = React.createClass({
     else if (step === 3)
       component =
         <FinalStep
+          resize={this.resize}
           startOver={() => dispatch(nextStep(1))}
           places={places}
         />

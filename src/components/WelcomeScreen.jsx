@@ -30,11 +30,20 @@ let styles = {
 }
 
 export default class WelcomeScreen extends React.Component {
+  resize() {
+    this.props.resize()
+  }
+
   render() {
     return(
       <div className="blue" style={styles.container}>
         <Header />
-        <img src={plane} className="plane" style={styles.plane} />
+        <img
+          src={plane}
+          className="plane"
+          style={styles.plane}
+          onLoad={this.resize.bind(this)}
+        />
         <div style={styles.cloud_container}>
           <div className="clouds" style={styles.clouds} />
         </div>
