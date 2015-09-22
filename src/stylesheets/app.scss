@@ -101,12 +101,11 @@ input {
 @media (max-width: 480px) {
   .clouds {
     animation: animatedBackground 30s linear infinite;
-    height: 149px !important;
-    // height: 200px !important;
+    height: 130px !important;
     width: 100%;
-    width: 799px;
-    margin-top: -95px !important;
-    // background-size: 400%;
+    max-width: 799px;
+    margin-top: 25px !important;
+    background-size: 401%;
   }
   .plane {
     margin-top: 30px !important;
@@ -122,8 +121,8 @@ input {
     }
   }
   .results {
-    font-size: 22px !important;
-    line-height: 34px !important;
+    font-size: 20px !important;
+    line-height: 31px !important;
     // padding-top: 0 !important;
     padding: 0 0 10px 18px !important;
     br + br {
@@ -131,7 +130,7 @@ input {
     }
   }
   .final.clouds {
-    margin-top: -50px !important;
+    // margin-top: -50px !important;
   }
   .label {
     font-size: 22px !important;
